@@ -1,0 +1,26 @@
+plugins {
+    id "java-library"
+    id "org.springframework.boot.auto-configuration"
+    id "org.springframework.boot.conventions"
+    id "org.springframework.boot.deployed"
+    id "org.springframework.boot.integration-test"
+    id "org.springframework.boot.optional-dependencies"
+}
+
+description = "Spring Boot Developer Tools"
+group 'cn.zjut'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-web"))
+    testImplementation(project(":spring-boot-project:spring-boot-starters:spring-boot-starter-test"))
+    testImplementation("org.apache.httpcomponents:httpclient")
+}
+
+test {
+    useJUnitPlatform()
+}
